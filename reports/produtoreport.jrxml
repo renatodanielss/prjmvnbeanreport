@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="estiloinstitutobeleza_report" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="05a86d77-8b2c-49cc-9bf6-27fbf7a545d5">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[select * from tbl_produto]]>
+	</queryString>
+	<field name="id" class="java.lang.Integer"/>
+	<field name="nome" class="java.lang.String"/>
+	<field name="valorproduto" class="java.lang.Double"/>
+	<field name="valorpravendaproduto" class="java.lang.Double"/>
+	<field name="tipounidade" class="java.lang.String"/>
+	<field name="qtdestoque" class="java.lang.Integer"/>
+	<group name="nome">
+		<groupExpression><![CDATA[]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="23" splitType="Stretch">
+			<staticText>
+				<reportElement x="202" y="0" width="187" height="23" uuid="6ec26fa8-d021-455c-8bf5-b2716a0c7919"/>
+				<textElement>
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Relatório de Produtos]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="435" y="0" width="80" height="20" uuid="06d08240-2804-45f3-8c68-199839537286"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Página "+$V{PAGE_NUMBER}+" de"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="515" y="0" width="40" height="20" uuid="9db45469-0ec8-4a69-8e02-95ecd71639ce"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="14" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="13" width="555" height="1" uuid="3d9ff8e2-9dfa-4e1a-bf04-4c08222532aa"/>
+			</line>
+			<line>
+				<reportElement x="112" y="0" width="1" height="13" uuid="3ccdd4cc-2dcc-4547-981a-7dd0c0795ef3"/>
+			</line>
+			<line>
+				<reportElement x="303" y="0" width="1" height="13" uuid="2c50fa85-487d-4595-9144-f78adb6d8f32"/>
+			</line>
+			<line>
+				<reportElement x="389" y="0" width="1" height="13" uuid="be0054c7-5b2c-43c9-8b6d-7781043e9563"/>
+			</line>
+			<staticText>
+				<reportElement x="0" y="0" width="110" height="14" uuid="36ac836a-63d7-47b5-82b1-c2fb15034dc6"/>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="116" y="0" width="185" height="14" uuid="8ff1d64c-ae30-4c97-a544-c6eb1989ce05"/>
+				<text><![CDATA[Produto]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="306" y="0" width="81" height="14" uuid="5ab92c2e-f72c-442a-b321-d84841953aa3"/>
+				<text><![CDATA[Valor de Venda]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="392" y="0" width="81" height="14" uuid="199082f9-c2ea-4dd7-bd42-187a1e072380"/>
+				<text><![CDATA[Estoque]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="476" y="0" width="79" height="14" uuid="75cd8b26-f938-4137-9137-b671607a5290"/>
+				<text><![CDATA[Unidade]]></text>
+			</staticText>
+			<line>
+				<reportElement x="474" y="0" width="1" height="13" uuid="f74b06d3-cd82-40ab-99e1-efbe7ed12f54"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="14" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="13" width="555" height="1" uuid="ab35d598-27d4-4410-a86a-0876cf839aef"/>
+			</line>
+			<line>
+				<reportElement x="112" y="0" width="1" height="13" uuid="1dd11b36-1226-4917-a2b5-ae60c5c3ef8b"/>
+			</line>
+			<line>
+				<reportElement x="303" y="0" width="1" height="13" uuid="abef3282-f707-4dd8-bd23-a0a07ef60fb6"/>
+			</line>
+			<line>
+				<reportElement x="389" y="0" width="1" height="13" uuid="49724caa-a3b1-4910-9100-d07dd516d7e8"/>
+			</line>
+			<line>
+				<reportElement x="474" y="0" width="1" height="13" uuid="bf1a64cd-d356-40f0-aa34-6b1761d53447"/>
+			</line>
+			<textField>
+				<reportElement x="0" y="0" width="110" height="14" uuid="0e073bff-0db2-4b91-9a68-a744b06c039a"/>
+				<textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="116" y="0" width="185" height="14" uuid="b40f072f-a37e-4342-8052-9ffe1618e90d"/>
+				<textFieldExpression><![CDATA[$F{nome}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="306" y="0" width="81" height="14" uuid="2826721b-c094-46f6-b9ae-efaa3309a558"/>
+				<textFieldExpression><![CDATA[$F{valorpravendaproduto}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="392" y="0" width="81" height="14" uuid="37de07b2-c83c-4672-bfb4-83f014660d98"/>
+				<textFieldExpression><![CDATA[$F{qtdestoque}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="476" y="0" width="79" height="14" uuid="152b747e-ffd0-4a03-b6c3-06249580a4f3"/>
+				<textFieldExpression><![CDATA[$F{tipounidade}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="20" splitType="Stretch">
+			<textField evaluationTime="Report">
+				<reportElement x="515" y="0" width="40" height="20" uuid="e564df6b-0f6f-4ea1-8a9d-aac36c0a1914"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="435" y="0" width="80" height="20" uuid="9cb91f0b-9fb2-475e-a59b-706eb9beccef"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Página "+$V{PAGE_NUMBER}+" de"]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
